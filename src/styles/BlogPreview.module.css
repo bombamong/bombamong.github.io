@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 10px 15px 10px 15px;
+  min-width: 300px;
+  min-height: 250px;
+  max-height: 550px;
+  /* border: 1px solid black; */
+  border-radius: 7px;
+  background-color: rgba(25, 25, 30, 0.9);
+  box-shadow: 1px 1px 7px black;
+  list-style-type: none;
+}
+
+.thumbnail {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.thumbnail img {
+  object-fit: contain;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.postContent * {
+  margin: 2px 10px;
+}
+
+.postText {
+  display: flex;
+  flex: 0.9;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.postTitle {
+  display: flex;
+  flex: 0.1;
+  color: white;
+}
+
+.postDate {
+  display: flex;
+  flex: 0.1;
+  font-size: 0.7em;
+  color: lightgreen;
+  align-items: center;
+}
+
+.postBody {
+  display: flex;
+  flex: 0.8;
+  color: rgba(200, 200, 200, 0.8);
+  overflow: scroll;
+  font-size: 0.9em;
+}
+
+.postRead {
+  display: flex;
+  flex: 0.1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-top: 1px dotted darkgray;
+}
+
+.postReadButton {
+  display: flex;
+  flex: 1;
+  outline: none;
+  background-color: #ffff90;
+  border: none;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.postReadButton * {
+  text-decoration: none;
+  color: black;
+}

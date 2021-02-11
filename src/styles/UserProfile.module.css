@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  min-height: 350px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  background-color: #323f4b;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px rgba(20, 20, 20, 1);
+  min-width: 300px;
+}
+
+.avatar {
+  display: flex;
+  flex: 0.8;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0px 4px 5px black;
+  margin-top: 20px;
+}
+
+.avatar img {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+
+.userNameContainer {
+  display: flex;
+  flex: 0.2;
+  color: white;
+}

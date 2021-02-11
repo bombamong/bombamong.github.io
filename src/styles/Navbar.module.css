@@ -1,0 +1,46 @@
+.container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  max-height: 60px;
+  min-height: 60px;
+  align-items: center;
+  background-color: #3e4c59;
+  width: 100%;
+  border-bottom: 1px solid #616e7c;
+  z-index: 999;
+}
+
+.circle {
+  position: absolute;
+  cursor: none;
+  top: 5px;
+  right: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+}
+
+.circle:hover {
+  background-color: rgba(10, 10, 10, 0.7);
+  cursor: none;
+}
+
+.routeContainer {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.routeContainer * {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  transition: 0.1s ease-in-out all;
+}
+
+.routeContainer h1:hover {
+  color: grey;
+}
