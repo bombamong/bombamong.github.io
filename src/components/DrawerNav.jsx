@@ -12,6 +12,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import { Inbox, Mail, Menu } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const DrawerNav = () => {
   const classes = useStyles();
@@ -43,23 +44,33 @@ const DrawerNav = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem button key={"Home"}>
-          <ListItemIcon>
-            <Inbox />
-          </ListItemIcon>
-          <ListItemText primary={"Home"} />
-        </ListItem>
+        <Link
+          style={{ textDecoration: "none", color: "black", cursor: "pointer" }}
+          to="/"
+        >
+          <ListItem button key={"Home"}>
+            <ListItemIcon>
+              <Inbox />
+            </ListItemIcon>
+            <ListItemText primary={"Home"} />
+          </ListItem>
+        </Link>
       </List>
 
       <Divider />
 
       <List>
-        <ListItem button key={"Home"}>
-          <ListItemIcon>
-            <Inbox />
-          </ListItemIcon>
-          <ListItemText primary={"Blog"} />
-        </ListItem>
+        <Link
+          style={{ textDecoration: "none", color: "black", cursor: "pointer" }}
+          to="/blogp"
+        >
+          <ListItem button key={"Blog"}>
+            <ListItemIcon>
+              <Inbox />
+            </ListItemIcon>
+            <ListItemText primary={"Blog"} />
+          </ListItem>
+        </Link>
       </List>
     </div>
   );
@@ -108,30 +119,3 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default DrawerNav;
-
-// const Navbar = props => {
-//   return (
-//     <nav className={styles.container}>
-//       <div className={styles.routeContainer}>
-//         <Link to="/">
-//           <h1>HOME</h1>
-//         </Link>
-//       </div>
-//       <div className={styles.routeContainer}>
-//         <Link to="/about">
-//           <h1>ABOUT</h1>
-//         </Link>
-//       </div>
-//       <div className={styles.routeContainer}>
-//         <Link to="/contact">
-//           <h1>CONTACT</h1>
-//         </Link>
-//       </div>
-//       <div className={styles.routeContainer}>
-//         <Link to="/blogp">
-//           <h1>POST</h1>
-//         </Link>
-//       </div>
-//     </nav>
-//   );
-// };

@@ -96,11 +96,36 @@ const UserProfile = props => {
         direction="column"
         justify="flex-start"
         alignItems="flex-start"
-        style={{ minHeight: "100vh", padding: "2em 0" }}
+        style={{
+          minHeight: "60vh",
+          padding: "2em 1em",
+          border: "0.5px dashed lightgrey",
+        }}
       >
-        <Typography variant="h3">About</Typography>
-        <Grid style={{ border: "1px solid black" }} container>
-          <Typography>LEARN</Typography>
+        <Typography variant="h2">About</Typography>
+        <Grid
+          // style={{ border: "1px solid black" }}
+          container
+        >
+          <Typography variant="h4">Name: David Byun</Typography>
+        </Grid>
+        <Grid
+          // style={{ border: "1px solid black" }}
+          container
+        >
+          <Typography variant="h4">Location: Seoul, South Korea</Typography>
+        </Grid>
+        <Grid
+          // style={{ border: "1px solid black" }}
+          container
+        >
+          <Typography variant="h4">Github: bombamong</Typography>
+        </Grid>
+        <Grid
+          // style={{ border: "1px solid black" }}
+          container
+        >
+          <Typography variant="h4">Stack: JS/NODE/GO</Typography>
         </Grid>
       </Grid>
     );
@@ -131,7 +156,6 @@ const useStyles = makeStyles(theme => {
   return {
     root: {
       minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`,
-      borderBottom: "0.5px solid lightgrey",
       padding: "2em 0",
     },
     myname: {

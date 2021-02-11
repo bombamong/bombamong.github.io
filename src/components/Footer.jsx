@@ -15,25 +15,13 @@ const Footer = () => {
         <Grid
           item
           justify="flex-end"
-          style={{ display: "flex", flex: 1, margin: "0 1em" }}
+          style={{ display: "flex", flex: 1, padding: "0 2em" }}
         >
           <Typography style={{ color: "grey" }} variant="body1" align="center">
             ©Bombamong
           </Typography>
         </Grid>
       </Grid>
-      {/* <Grid container justify="center" direction="row" alignItems="center">
-        <Grid item justify="center" style={{ display: "flex", flex: 1 }}>
-          <Typography style={{ color: "grey" }} variant="body1" align="center">
-            // I made this :)
-          </Typography>
-        </Grid>
-        <Grid item justify="center" style={{ display: "flex", flex: 1 }}>
-          <Typography style={{ color: "grey" }} variant="body1" align="center">
-            // I made this :)
-          </Typography>
-        </Grid>
-      </Grid> */}
     </Grid>
   );
 };

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Major Mono";
+  font-family: "Iceland";
   /*   
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -9,16 +9,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .root * {
-  font-family: "Major Mono";
+  font-family: "Iceland";
 }
 
 @font-face {
-  font-family: "Major Mono";
+  font-family: "Iceland";
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
   font-weight: normal;
-  src: url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap")
-    format("truetype");
+  src: url("./assets/fonts/Iceland-Regular.ttf") format("truetype");
 }
 
 code {
