@@ -1,8 +1,9 @@
+import React from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-import NavBar from "./components/Navbar";
+import DrawerNav from "./components/DrawerNav";
 import Blog from "./pages/Blog";
 import PostBlog from "./pages/PostBlog";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -10,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <NavBar />
+      <DrawerNav />
       <Switch>
         <Route exact path="/blog/:slug" component={Blog} />
         <Route path="/blogp" component={PostBlog} />
