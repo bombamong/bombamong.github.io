@@ -14,7 +14,8 @@ import {
 import PB from "../assets/programmingBall.svg";
 import { Link } from "react-router-dom";
 
-const BlogPreview = ({ id, title, body, summary, createdAt, thumbnail }) => {
+const BlogPreview = ({ data }) => {
+  const { id, title, body, summary, createdAt, thumbnail } = data;
   const classes = useStyles();
 
   return (
@@ -29,20 +30,31 @@ const BlogPreview = ({ id, title, body, summary, createdAt, thumbnail }) => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {summary}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions style={{ borderTop: "0.5px solid lightgrey" }}>
         <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
+          <Link
+            style={{
+              backgroundColor: "rgba(144,238,144, 0.5)",
+              boxShadow: "0 0.5px 2px 0 rgba(0, 0, 0, 0.5)",
+              padding: "0.5em",
+              textDecoration: "none",
+              color: "black",
+              cursor: "pointer",
+            }}
+            to={{
+              pathname: `blog/${id}-${title}`,
+              state: data,
+            }}
+          >
+            Read blog
+          </Link>
         </Button>
       </CardActions>
     </Card>
@@ -52,6 +64,7 @@ const BlogPreview = ({ id, title, body, summary, createdAt, thumbnail }) => {
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
+    backgroundColor: "rgba( 230, 230, 230, 0.25 )",
   },
 }));
 

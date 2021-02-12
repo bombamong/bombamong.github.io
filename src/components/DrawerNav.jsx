@@ -77,11 +77,22 @@ const DrawerNav = () => {
 
   const anchor = "left";
   return (
-    <div style={{ position: "sticky", top: 0 }}>
+    <div
+      style={{
+        position: "sticky",
+        top: 0,
+        boxShadow: "0 1px 5px 0 rgba( 31, 38, 135, 0.37 )",
+        backdropFilter: "blur( 7px )",
+        WebkitBackdropFilter: "blur(7px)",
+        backgroundColor: "rgba( 243, 243, 243, 0.25 )",
+        // border: "1px solid rgba( 255, 255, 255, 0.18 )",
+        // borderRadius: "10px",
+      }}
+    >
       <React.Fragment key={anchor}>
         <IconButton
           onClick={toggleDrawer(anchor, true)}
-          color="secondary"
+          color="primary"
           aria-label="open drawer"
           edge="start"
           className={classes.menuButton}
@@ -108,10 +119,9 @@ const useStyles = makeStyles(theme => ({
     width: "auto",
   },
   menuButton: {
-    backgroundColor: "transparent",
-    backgroundColor: "white",
-    marginLeft: theme.spacing(3),
-    marginTop: theme.spacing(2),
+    // backgroundColor: "transparent",
+    margin: theme.spacing(1),
+
     // [theme.breakpoints.up("sm")]: {
     //   display: "none",
     // },
