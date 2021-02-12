@@ -13,7 +13,7 @@ const BlogList = props => {
       className={classes.root}
     >
       <Typography variant="h2">Recent blog post</Typography>
-      <Grid container direction="row">
+      <Grid spacing={2} container direction="row">
         <Grid item md={6}>
           <BlogPreview
             data={{

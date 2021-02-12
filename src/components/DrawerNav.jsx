@@ -79,7 +79,7 @@ const DrawerNav = () => {
   return (
     <div style={{ position: "sticky", top: 0 }}>
       <React.Fragment key={anchor}>
-        <Button
+        <IconButton
           onClick={toggleDrawer(anchor, true)}
           color="secondary"
           aria-label="open drawer"
@@ -87,7 +87,7 @@ const DrawerNav = () => {
           className={classes.menuButton}
         >
           <Menu />
-        </Button>
+        </IconButton>
         <Drawer
           anchor={anchor}
           open={state[anchor]}
@@ -109,7 +109,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     backgroundColor: "transparent",
-    border: "0.5px solid lightgrey",
+    backgroundColor: "white",
     marginLeft: theme.spacing(3),
     marginTop: theme.spacing(2),
     // [theme.breakpoints.up("sm")]: {
