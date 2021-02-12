@@ -3,11 +3,6 @@ import { makeStyles, Grid, Typography } from "@material-ui/core";
 
 const UserProfile = props => {
   const classes = useStyles();
-  const [color, setColor] = useState({ r: 1, g: 1, b: 1 });
-
-  const getRandomColor = () => {
-    return Math.floor(Math.random() * 256);
-  };
 
   const renderLanding = () => {
     return (
@@ -100,39 +95,42 @@ const UserProfile = props => {
           minHeight: "60vh",
           padding: "2em 1em",
           border: "0.5px dashed lightgrey",
+          backgroundColor: "white",
         }}
       >
-        <Typography variant="h2">About</Typography>
-        <Grid
-          // style={{ border: "1px solid black" }}
-          container
-        >
-          <Typography variant="h4">Name: David Byun</Typography>
-        </Grid>
-        <Grid
-          // style={{ border: "1px solid black" }}
-          container
-        >
-          <Typography variant="h4">Location: Seoul, South Korea</Typography>
-        </Grid>
-        <Grid
-          // style={{ border: "1px solid black" }}
-          container
-        >
-          <Typography variant="h4">Github: bombamong</Typography>
-        </Grid>
-        <Grid
-          // style={{ border: "1px solid black" }}
-          container
-        >
-          <Typography variant="h4">Stack: JS/NODE/GO</Typography>
+        <Grid item style={{ backgroundColor: "white" }}>
+          <Typography variant="h2">About</Typography>
+          <Grid
+            // style={{ border: "1px solid black" }}
+            container
+          >
+            <Typography variant="h4">Name: David Byun</Typography>
+          </Grid>
+          <Grid
+            // style={{ border: "1px solid black" }}
+            container
+          >
+            <Typography variant="h4">Location: Seoul, South Korea</Typography>
+          </Grid>
+          <Grid
+            // style={{ border: "1px solid black" }}
+            container
+          >
+            <Typography variant="h4">Github: bombamong</Typography>
+          </Grid>
+          <Grid
+            // style={{ border: "1px solid black" }}
+            container
+          >
+            <Typography variant="h4">Stack: JS/NODE/GO</Typography>
+          </Grid>
         </Grid>
       </Grid>
     );
   };
 
   return (
-    <Grid container direction="column">
+    <Grid style={{ zIndex: 0 }} container direction="column">
       {renderLanding()}
       {renderAbout()}
     </Grid>
@@ -155,6 +153,7 @@ const useStyles = makeStyles(theme => {
 
   return {
     root: {
+      backgroundColor: "white",
       minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`,
       padding: "2em 0",
     },

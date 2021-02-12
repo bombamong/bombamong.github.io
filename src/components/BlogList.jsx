@@ -12,8 +12,8 @@ const BlogList = props => {
       alignItems="flex-start"
       className={classes.root}
     >
-      <Typography variant="h2">Recent blog post</Typography>
-      <Grid container direction="row">
+      <Typography variant="h2">Recent posts</Typography>
+      <Grid spacing={2} container direction="row">
         <Grid item md={6}>
           <BlogPreview
             data={{
