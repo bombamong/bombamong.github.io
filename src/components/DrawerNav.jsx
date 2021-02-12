@@ -79,6 +79,7 @@ const DrawerNav = () => {
   return (
     <div
       style={{
+        zIndex: 1,
         position: "sticky",
         top: 0,
         boxShadow: "0 1px 5px 0 rgba( 31, 38, 135, 0.37 )",
