@@ -162,7 +162,6 @@ const useStyles = makeStyles(theme => {
       color: "white",
       mixBlendMode: "difference",
       flexDirection: "row",
-      fontFamily: "Major Mono",
       "& div:not(.vibrate)": {
         display: "flex",
         overflow: "hidden",

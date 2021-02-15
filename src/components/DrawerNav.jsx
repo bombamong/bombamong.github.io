@@ -62,7 +62,7 @@ const DrawerNav = () => {
       <List>
         <Link
           style={{ textDecoration: "none", color: "black", cursor: "pointer" }}
-          to="/blogp"
+          to="/blog"
         >
           <ListItem button key={"Blog"}>
             <ListItemIcon>
