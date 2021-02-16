@@ -177,10 +177,10 @@ const useStyles = makeStyles(theme => {
       },
     },
     vibrate: {
-      animation: `$vibrate 0.2s 10 linear`,
+      // animation: `$vibrate 0.2s 10 linear`,
     },
     vibrateR: {
-      animation: `$vibrateR 0.2s 10 linear`,
+      // animation: `$vibrateR 0.2s 10 linear`,
     },
 
     "@keyframes vibrate": {

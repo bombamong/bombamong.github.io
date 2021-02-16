@@ -18,7 +18,7 @@ function App() {
         <CssBaseline />
         <DrawerNav />
         <Switch>
-          <Route exact path="/blog/:slug" component={Blog} />
+          <Route exact path="/blog/post/:slug" component={Blog} />
           <Route path="/blog" component={BlogHome} />
           <Route path="/blogp" component={PostBlog} />
           <Route exact path="/login" component={Login} />

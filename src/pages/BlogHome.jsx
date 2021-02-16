@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import {
   Container,
   Grid,
@@ -127,9 +128,92 @@ const FeaturedPost = () => {
 };
 
 const Posts = () => {
+  const displays = {
+    readme: Readme(),
+    recent: Recent(),
+  };
+  const [display, setDisplay] = useState("readme");
+
+  const handleLinkClick = link => {
+    setDisplay(link);
+  };
   return (
-    <Grid container>
-      <Typography variant="h3">POSTS</Typography>
+    <Grid
+      container
+      direction="column"
+      style={{ width: "100%", margin: "1em 0" }}
+    >
+      <Grid spacing={0} container direction="row">
+        <Grid
+          style={{
+            backgroundColor: "lightgrey",
+            padding: "0.5em",
+          }}
+          item
+          xs={12}
+          md={2}
+          direction="column"
+        >
+          <Grid
+            container
+            // justify="center"
+            // alignItems="center"
+            direction="column"
+            style={{ height: "100%" }}
+          >
+            <NavLink
+              handleLinkClick={handleLinkClick}
+              linkTo={`readme`}
+              title={"README"}
+            />
+            <NavLink
+              handleLinkClick={handleLinkClick}
+              linkTo={`recent`}
+              title={"RECENT"}
+            />
+          </Grid>
+        </Grid>
+        {displays[display]}
+      </Grid>
+    </Grid>
+  );
+};
+
+const NavLink = ({ linkTo, title, handleLinkClick }) => {
+  let { path, url } = useRouteMatch();
+  return (
+    <Grid
+      onClick={() => handleLinkClick(linkTo)}
+      style={{ padding: "1em 0", cursor: "pointer" }}
+      item
+    >
+      <Typography variant="h5">{title}</Typography>
+    </Grid>
+  );
+};
+
+const Readme = () => {
+  return (
+    <Grid item direction="column" xs={12} md={9} style={{ padding: "0 0.5em" }}>
+      <Grid item>
+        <Typography variant="h3">README</Typography>
+      </Grid>
+      <Grid item>
+        <Typography variant="h5">This blog is adf</Typography>
+      </Grid>
+    </Grid>
+  );
+};
+
+const Recent = () => {
+  return (
+    <Grid item direction="column" xs={12} md={9} style={{ padding: "0 0.5em" }}>
+      <Grid item>
+        <Typography variant="h3">RECENT</Typography>
+      </Grid>
+      <Grid item>
+        <Typography variant="h5">These are recent posts</Typography>
+      </Grid>
     </Grid>
   );
 };
@@ -137,8 +221,10 @@ const Posts = () => {
 const useStyles = makeStyles(theme => ({
   root: {
     minHeight: "100vh",
+    marginBottom: "3em",
     "& *": {
       zIndex: 0,
+      borderRadius: "2px",
     },
   },
   topbar: { padding: "0.3em 0" },
