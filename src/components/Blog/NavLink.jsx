@@ -1,48 +1,10 @@
-import React, { useEffect, useState, useHistory } from "react";
+import React from "react";
+import { useRouteMatch } from "react-router-dom";
 import {
-  Container,
   Grid,
   Typography,
-  Button,
   makeStyles
 } from "@material-ui/core";
-import TopBar from '../components/Blog/TopBar'
-import Footer from "../components/Footer";
-import Categories from '../components/Blog/Categories';
-import Devlog from '../components/Blog/Devlog';
-import Learn from '../components/Blog/Learn';
-import Algorithms from '../components/Blog/Algorithms';
-import Scrap from '../components/Blog/Scrap';
-import FeaturedPost from '../components/Blog/FeaturedPost';
-import Projects from '../components/Blog/Projects';
-
-const BlogHome = () => {
-  const classes = useStyles();
-  const [category, setCategory] = useState("home")
-
-  const changeCurrentCategory = (cat) => {
-    setCategory(cat)
-  }
-
-  return (
-    <Container disableGutters maxWidth="xl">
-      <Container className={classes.root} maxWidth="lg">
-        <Grid container direction="column">
-          <TopBar changeCurrentCategory={changeCurrentCategory} />
-          <Categories changeCurrentCategory={changeCurrentCategory} />
-          {
-            category === "devlog" ? <Devlog />
-              : category === "learn" ? <Learn />
-                : category === "algo" ? <Algorithms />
-                  : category === "scrap" ? <Scrap />
-                    : category === "projects" ? <Projects /> : <FeaturedPost />
-          }
-        </Grid>
-      </Container>
-      <Footer />
-    </Container>
-  );
-};
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -103,4 +65,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default BlogHome;
+const NavLink = ({ linkTo, title, handleLinkClick, currentDisplay }) => {
+  let { path, url } = useRouteMatch();
+  const classes = useStyles();
+  return (
+    <Grid
+      onClick={() => handleLinkClick(linkTo)}
+      className={`${classes.navLink} ${currentDisplay === linkTo ? classes.selected : ""
+        }`}
+      item
+    >
+      <Typography align="center" variant="h5">
+        {title}
+      </Typography>
+    </Grid>
+  );
+};
+
+export default NavLink

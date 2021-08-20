@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useHistory } from "react";
+import React, { useEffect, useState } from "react";
+import {useHistory} from "react-router-dom"
 import {
   Container,
   Grid,
@@ -6,43 +7,6 @@ import {
   Button,
   makeStyles
 } from "@material-ui/core";
-import TopBar from '../components/Blog/TopBar'
-import Footer from "../components/Footer";
-import Categories from '../components/Blog/Categories';
-import Devlog from '../components/Blog/Devlog';
-import Learn from '../components/Blog/Learn';
-import Algorithms from '../components/Blog/Algorithms';
-import Scrap from '../components/Blog/Scrap';
-import FeaturedPost from '../components/Blog/FeaturedPost';
-import Projects from '../components/Blog/Projects';
-
-const BlogHome = () => {
-  const classes = useStyles();
-  const [category, setCategory] = useState("home")
-
-  const changeCurrentCategory = (cat) => {
-    setCategory(cat)
-  }
-
-  return (
-    <Container disableGutters maxWidth="xl">
-      <Container className={classes.root} maxWidth="lg">
-        <Grid container direction="column">
-          <TopBar changeCurrentCategory={changeCurrentCategory} />
-          <Categories changeCurrentCategory={changeCurrentCategory} />
-          {
-            category === "devlog" ? <Devlog />
-              : category === "learn" ? <Learn />
-                : category === "algo" ? <Algorithms />
-                  : category === "scrap" ? <Scrap />
-                    : category === "projects" ? <Projects /> : <FeaturedPost />
-          }
-        </Grid>
-      </Container>
-      <Footer />
-    </Container>
-  );
-};
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -103,4 +67,58 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default BlogHome;
+const TopBar = ({ changeCurrentCategory }) => {
+  const classes = useStyles();
+  const history = useHistory();
+
+  return (
+    <Grid
+      className={classes.topbar}
+      container
+      direction="row"
+      justify="center"
+      alignItems="center"
+    >
+      <Grid style={{ flex: 1 }} item>
+        <Grid item>
+          <Button style={{ display: "flex" }}>
+            <Typography align="center" variant="h5">
+              SUBSCRIBE
+            </Typography>
+          </Button>
+        </Grid>
+      </Grid>
+      <Grid style={{ flex: 1, cursor: "pointer" }} item onClick={() => {
+        changeCurrentCategory("home")
+      }}>
+        <Typography align="center" variant="h2">
+          Blog
+        </Typography>
+      </Grid>
+      <Grid
+        style={{ flex: 1 }}
+        justify="flex-end"
+        alignItems="center"
+        container
+      >
+        <Grid item>
+          <Button style={{ display: "flex" }} onClick={() => {
+            let str = prompt()
+            if(str === "1234") {
+              alert("Logged in")
+              history.push("/blogp")
+            } else {
+              alert("Failed to access")
+            }
+            }}>
+            <Typography align="center" variant="h5">
+              POST
+            </Typography>
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
+
+export default TopBar;

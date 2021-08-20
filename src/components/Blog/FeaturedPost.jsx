@@ -1,48 +1,10 @@
-import React, { useEffect, useState, useHistory } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Container,
   Grid,
   Typography,
-  Button,
   makeStyles
 } from "@material-ui/core";
-import TopBar from '../components/Blog/TopBar'
-import Footer from "../components/Footer";
-import Categories from '../components/Blog/Categories';
-import Devlog from '../components/Blog/Devlog';
-import Learn from '../components/Blog/Learn';
-import Algorithms from '../components/Blog/Algorithms';
-import Scrap from '../components/Blog/Scrap';
-import FeaturedPost from '../components/Blog/FeaturedPost';
-import Projects from '../components/Blog/Projects';
-
-const BlogHome = () => {
-  const classes = useStyles();
-  const [category, setCategory] = useState("home")
-
-  const changeCurrentCategory = (cat) => {
-    setCategory(cat)
-  }
-
-  return (
-    <Container disableGutters maxWidth="xl">
-      <Container className={classes.root} maxWidth="lg">
-        <Grid container direction="column">
-          <TopBar changeCurrentCategory={changeCurrentCategory} />
-          <Categories changeCurrentCategory={changeCurrentCategory} />
-          {
-            category === "devlog" ? <Devlog />
-              : category === "learn" ? <Learn />
-                : category === "algo" ? <Algorithms />
-                  : category === "scrap" ? <Scrap />
-                    : category === "projects" ? <Projects /> : <FeaturedPost />
-          }
-        </Grid>
-      </Container>
-      <Footer />
-    </Container>
-  );
-};
+import HomePosts from './HomePosts'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -103,4 +65,48 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default BlogHome;
+const FeaturedPost = () => {
+  const [imgSrc, setImgSrc] = useState("");
+  const classes = useStyles();
+  useEffect(() => {
+    setImgSrc("https://picsum.photos/1200/400");
+  }, [imgSrc]);
+
+  const changeImg = () => {
+    setImgSrc("");
+  };
+
+  return (
+    <>
+      <Grid
+        onClick={changeImg}
+        container
+        alignItems="center"
+        className={classes.featuredPostContainer}
+        style={{ backgroundImage: `url(${imgSrc})` }}
+      >
+        <Grid
+          md={6}
+          item
+          style={{
+            width: "100%",
+            color: "white",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            // mixBlendMode: "exclude",
+            padding: "1em",
+          }}
+        >
+          <Typography variant="h2" component="h2">
+            SPACE TO LEARN & SHARE
+          </Typography>
+          <Typography variant="h4">
+            Code, notes and more about my dev life.
+          </Typography>
+        </Grid>
+      </Grid>
+      <HomePosts />
+    </>
+  );
+};
+
+export default FeaturedPost;

@@ -49,7 +49,7 @@ const BlogPreview = ({ data }) => {
               cursor: "pointer",
             }}
             to={{
-              pathname: `blog/${id}-${title}`,
+              pathname: `blog/post/${id}-${title}`,
               state: data,
             }}
           >

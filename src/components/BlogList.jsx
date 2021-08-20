@@ -46,11 +46,11 @@ const BlogList = props => {
               id: 4,
               title: "hello",
               body: `
-\`\`\`javascript
-let i = 0;
-let b = 2;
-\`\`\`
-            `,
+              \`\`\`javascript
+              let i = 0;
+              let b = 2;
+              \`\`\`
+              `,
               summary: "some things about life",
               createdAt: new Date().toLocaleDateString(),
               thumbnail: "https://picsum.photos/300/300",
